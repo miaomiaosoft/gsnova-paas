@@ -11,7 +11,8 @@ RUN \
     && apk del .build-deps 
     
 ENV KEY=809240d3a021449f6e67aa73221d42df942a308a
+EXPOSE 9443
 ENTRYPOINT ["/opt/gsnova/gsnova_paas_linux_amd64"]
-CMD ["-key", $KEY]
+CMD ["-key", $KEY,"-listen",":9443"]
 
 
