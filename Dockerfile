@@ -1,5 +1,9 @@
 FROM alpine:3.5
 
+RUN adduser -D myuser
+
+USER myuser
+
 ARG GSNOVA_PAAS_VER=0.26.3
 
 RUN \
