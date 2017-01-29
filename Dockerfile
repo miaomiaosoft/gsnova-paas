@@ -10,9 +10,10 @@ RUN \
     && cd ~ \
     && apk del .build-deps 
     
-ENV KEY=809240d3a021449f6e67aa73221d42df942a308a LISTEN_PORT=8080
+ENV KEY=809240d3a021449f6e67aa73221d42df942a308a PORT=8080
 
-ENTRYPOINT ["/opt/gsnova/gsnova_paas_linux_amd64"]
-CMD ["-key", $KEY, "-listen", 127.0.0.1:$LISTEN_PORT]
+ADD entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh && crontab -l
+ENTRYPOINT  sh /entrypoint.sh ; crond -f
 
-EXPOSE $LISTEN_PORT/TCP
+EXPOSE $PORT/TCP
