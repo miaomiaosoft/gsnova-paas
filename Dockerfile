@@ -1,7 +1,5 @@
 FROM alpine:3.5
 
-USER nobody
-
 ARG GSNOVA_PAAS_VER=0.26.3
 
 RUN \
@@ -18,4 +16,4 @@ ADD entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh && crontab -l
 ENTRYPOINT  sh /entrypoint.sh ; crond -f
 
-EXPOSE $PORT/TCP
+EXPOSE $PORT
