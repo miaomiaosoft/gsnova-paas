@@ -11,9 +11,10 @@ RUN \
     && apk del .build-deps 
     
 ENV KEY=809240d3a021449f6e67aa73221d42df942a308a PORT=8080
+EXPOSE $PORT
 
 ADD entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh && crontab -l
 ENTRYPOINT  sh /entrypoint.sh ; crond -f
 
-EXPOSE $PORT
+
