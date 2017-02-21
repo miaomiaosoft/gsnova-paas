@@ -2,8 +2,8 @@ FROM alpine:3.5
 
 ARG GSNOVA_PAAS_VER=0.26.3
 ENV KEY=809240d3a021449f6e67aa73221d42df942a308a
-ENV CERT_FILE=https://my.server.com
-ENV KEY_FILE=https://my.server.com
+ENV CERT_FILE=https://www.baidu.com
+ENV KEY_FILE=https://www.baidu.com
 
 RUN \
     apk add --no-cache --virtual .build-deps curl \
