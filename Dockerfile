@@ -12,11 +12,15 @@ RUN \
     
 ENV KEY=809240d3a021449f6e67aa73221d42df942a308a
 
+ENV CERT_FILE=none
+
+ENV KEY_FILE=none
+
 ADD entrypoint.sh /entrypoint.sh
 
-RUN chmod +x /entrypoint.sh && crontab -l
+RUN chmod +x /entrypoint.sh
 
-ENTRYPOINT  sh /entrypoint.sh ; crond -f
+ENTRYPOINT  sh /entrypoint.sh
 
 EXPOSE 8080
 
