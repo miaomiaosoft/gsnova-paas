@@ -10,7 +10,7 @@ RUN \
     && cd ~ \
     && apk del .build-deps 
     
-ENV KEY=809240d3a021449f6e67aa73221d42df942a308a  CERT_PEM=none KEY_PEM=none
+ENV KEY=809240d3a021449f6e67aa73221d42df942a308a
 ADD entrypoint.sh /entrypoint.sh
 
 RUN chmod +x /entrypoint.sh
