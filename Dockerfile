@@ -1,24 +1,18 @@
 FROM alpine:3.6
 
-ARG VER=0.28.0
+ENV VER=0.28.0
 
 RUN \
-    apk add --no-cache --virtual .build-deps curl \
-    && mkdir -p /opt/gsnova \
-    && cd /opt/gsnova \
+    apk add --no-cache --virtual  curl \
+    && mkdir -m 777 /gsnova \
+    && cd /gsnova \
     && curl -fSL https://github.com/yinqiwen/gsnova/releases/download/v0.28.0/gsnova_server_linux_amd64-v0.28.0.tar.bz2 | tar xj  \
-    && cd ~ \
-    && apk del .build-deps 
+    && rm server.json \
+    && rm gsnova_server_linux_amd64-v0.28.0.tar.bz2 \
+    && chgrp -R 0 /gsnova \
+    && chmod -R g+rwX /gsnova 
     
-ENV  CERT_PEM=none KEY_PEM=none
-
-ADD entrypoint.sh /entrypoint.sh
-
-RUN chgrp -R 0 /opt/gsnova \
-    && chmod -R g+rwX /opt/gsnova \
-    && chmod +x /entrypoint.sh
-
-ENTRYPOINT  sh /entrypoint.sh
+CMD ["/gsnova/gsnova_server", "-http", ":8080"]
 
 EXPOSE 8080
 
