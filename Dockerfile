@@ -6,9 +6,9 @@ RUN \
     apk add --no-cache --virtual  curl \
     && mkdir -m 777 /gsnova \
     && cd /gsnova \
-    && curl -fSL https://github.com/yinqiwen/gsnova/releases/download/v0.28.0/gsnova_server_linux_amd64-v0.28.0.tar.bz2 | tar xj  \
-    && rm server.json \
-    && rm gsnova_server_linux_amd64-v0.28.0.tar.bz2 \
+    && curl -fSL https://github.com/yinqiwen/gsnova/releases/download/v$VER/gsnova_server_linux_amd64-v$VER.tar.bz2 | tar xj  \
+    && rm -rf server.json \
+    && rm -rf gsnova_server_linux_amd64-v$VER.tar.bz2 \
     && chgrp -R 0 /gsnova \
     && chmod -R g+rwX /gsnova 
     
