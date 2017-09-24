@@ -12,7 +12,11 @@ RUN \
     && chgrp -R 0 /gsnova \
     && chmod -R g+rwX /gsnova 
     
-CMD ["/gsnova/gsnova_server", "-http", ":8080"]
+ADD entrypoint.sh /entrypoint.sh
+
+RUN chmod +x /entrypoint.sh 
+
+ENTRYPOINT  /entrypoint.sh 
 
 EXPOSE 8080
 
