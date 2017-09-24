@@ -1,12 +1,12 @@
-FROM alpine:3.5
+FROM alpine:3.6
 
-ARG GSNOVA_PAAS_VER=0.26.3
+ARG VER=0.28.0
 
 RUN \
     apk add --no-cache --virtual .build-deps curl \
     && mkdir -p /opt/gsnova \
     && cd /opt/gsnova \
-    && curl -fSL https://github.com/yinqiwen/gsnova/releases/download/v$GSNOVA_PAAS_VER/gsnova_paas_linux_amd64-v$GSNOVA_PAAS_VER.tar.bz2 | tar xj  \
+    && curl -fSL https://github.com/yinqiwen/gsnova/releases/download/v$VER/gsnova_linux_amd64-v$VER.tar.bz2 | tar xj  \
     && cd ~ \
     && apk del .build-deps 
     
