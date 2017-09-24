@@ -4,7 +4,6 @@
 	"UDPReadTimeout": 30,
 	"AllowedUser":["*", "gsnova"],
 	"Cipher":{"Key":"809240d3a021449f6e67aa73221d42df942a308a"},
-	},
 	"HTTP2":{
 		"Listen":":8080",
 		"Key": "/gsnova/key_pem",
