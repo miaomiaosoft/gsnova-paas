@@ -7,5 +7,10 @@
 	"HTTP":{
 		"Listen": ":8080"
 	},
+	"HTTP2":{
+		"Listen": ":8088",
+		"Key": "",
+		"Cert": ""
+	},
 	"Log": ["stdout"]
 }
