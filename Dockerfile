@@ -2,9 +2,6 @@ FROM alpine:3.6
 
 ENV VER=0.28.0 CERT_PEM=none KEY_PEM=none
 
-RUN echo "net.core.default_qdisc=fq" >> /etc/sysctl.conf && \
-    echo "net.ipv4.tcp_congestion_control=bbr" >> /etc/sysctl.conf
-
 RUN \
     apk add --no-cache --virtual  curl \
     && mkdir -m 777 /gsnova \
