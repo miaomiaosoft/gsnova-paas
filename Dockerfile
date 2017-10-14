@@ -1,6 +1,6 @@
 FROM alpine:3.6
 
-ENV VER=0.28.0 CERT_PEM=none KEY_PEM=none
+ENV VER=0.28.0
 
 RUN \
     apk add --no-cache --virtual  curl \
@@ -13,9 +13,8 @@ RUN \
     && chmod -R g+rwX /gsnova 
     
 ADD server.json /gsnova/server.json    
-ADD entrypoint.sh /entrypoint.sh
-RUN chmod +x /entrypoint.sh 
-ENTRYPOINT  /entrypoint.sh 
+
+CMD ["/gsnova/gsnova_server","-conf","/gsnova/server.json"]
 
 EXPOSE 8080 8088
 
