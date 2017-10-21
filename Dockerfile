@@ -1,6 +1,6 @@
 FROM alpine:3.6
 
-ENV VER=0.28.0
+ENV VER=0.29.0
 
 RUN \
     apk add --no-cache --virtual  curl \
