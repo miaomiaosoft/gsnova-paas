@@ -1,6 +1,6 @@
 # deploy gsnova-paas to  docker(openshift starter)
 
-gsnova-paas ver 0.28.0
+gsnova-paas ver 0.29.0
 
 image: wangyi2005/gsnova-paas
 
