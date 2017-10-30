@@ -2,7 +2,7 @@
 
 gsnova-paas ver 0.29.0
 
-image: wangyi2005/gsnova-paas
+image: wangyi2005/gsnova-paas，wangyi2005/gsnova-paas:#.##.#
 
 # 1.websocket
 
