@@ -1,4 +1,5 @@
-# deploy gsnova-paas to  docker(openshift starter)
+# deploy gsnova to heroku [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/wangyi2005/v2ray-heroku)
+# deploy gsnova-paas to openshift starter
 
 gsnova-paas ver 0.29.0
 
