@@ -14,7 +14,7 @@ RUN \
     
 ADD server.json /gsnova/server.json    
 
-CMD ["/gsnova/gsnova","-server -conf","/gsnova/server.json"]
+CMD ["/gsnova/gsnova","-server","-conf","/gsnova/server.json"]
 
 EXPOSE 8080 8088
 
